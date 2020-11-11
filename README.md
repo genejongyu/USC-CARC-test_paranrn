@@ -6,9 +6,16 @@ Using this code to run a parallel network on your own computer will be slightly 
 
 Information on the commands to format and submit jobs in the Discover cluster were taken from this website: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery
 
-## Installing PyNEURON for nrn-7.7
+## Installing nrn-7.8 (or latest stable version)
+To install the latest stable version of NEURON, use the following command:
 
-A bash wrapper for installing PyNEURON is provided and named install_nrn.
+```
+$ pip3 install --user neuron
+```
+
+## Installing nrn-7.7
+
+A bash wrapper and the source files for installing nrn-7.7 are provided.
 
 **Before you run the script, you must first open the file and change PWD to match the directory in which you want to install NEURON.**
 
@@ -24,30 +31,33 @@ If install_nrn is not executable, then you will need to run the following:
 $ chmod u+x install_nrn.sh
 ```
 
-With nrn-7.7, you will not need to run the install_pyneurons.sh script.
-
 ## Submitting a job
 The guide to submitting a job can be found here: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery/running-jobs
 
-For the example scripts, **you must first edit the following lines in each Slurm script to point to your installation of NEURON.**
+Before submitting a job, **you must first edit the following lines in each Slurm script to point to your installation of NEURON.**
 
-Default line
+### For nrn-7.8
+* The NEURON_PATH variable and the ```export PYTHONPATH...``` commands are unnecessary and can be deleted.
+
+### For nrn-7.7
+* Default line
 ```
 NEURON_PATH=/project/berger_92/geneyu/Big_Model/USC-CARC-test_paranrn/nrn-7.7
 ```
 
-New line
+* Change default line to...
 ```
 NEURON_PATH=PATH_TO_YOUR_NEURON_INSTALLATION
 ```
 
-Also, the account name will have to be changed if it is not berger_92. See the following line:
+### Account name
+The account name will have to be changed if it is not berger_92. See the following line:
 ```
 #SBATCH ---account=berger_92
 ```
 Enter the command ```myaccount``` to see your available accounts.
 
-### Example command for submitting a job
+### Example command for submitting a job (any nrn version)
 ```
 $ sbatch slurm_parallel_network.slurm
 ```
