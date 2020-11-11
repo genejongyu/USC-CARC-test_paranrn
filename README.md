@@ -41,7 +41,13 @@ New line
 NEURON_PATH=PATH_TO_YOUR_NEURON_INSTALLATION
 ```
 
-Submit job
+Also, the account name will have to be changed if it is not berger_92. See the following line:
+```
+#SBATCH ---account=berger_92
+```
+Enter the command ```myaccount``` to see your available accounts.
+
+### Example command for submitting a job
 ```
 $ sbatch slurm_parallel_network.slurm
 ```
@@ -58,9 +64,6 @@ Ex:
 ```#SBATCH --ntasks=```**4**
 
 ```mpirun -bind-to core -np``` **4** ```python test_distribute_neurons.py```
-
-The account name will have to be changed if it is not berger_92.
-Enter the command ```myaccount``` to see your available accounts.
 
 ## Interactive mode
 See: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery/getting-started (Testing your job section)
