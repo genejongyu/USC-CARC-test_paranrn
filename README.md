@@ -6,7 +6,7 @@ Using this code to run a parallel network on your own computer will be slightly 
 
 Information on the commands to format and submit jobs in the Discover cluster were taken from this website: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery
 
-# Installing PyNEURON for nrn-7.7
+## Installing PyNEURON for nrn-7.7
 
 A bash wrapper for installing PyNEURON is provided and named install_nrn.
 
@@ -26,7 +26,7 @@ $ chmod u+x install_nrn.sh
 
 With nrn-7.7, you will not need to run the install_pyneurons.sh script.
 
-# Submitting a job
+## Submitting a job
 The guide to submitting a job can be found here: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery/running-jobs
 
 For the example scripts, **you must first edit the following lines in each Slurm script to point to your installation of NEURON.**
@@ -46,7 +46,7 @@ Submit job
 $ sbatch slurm_parallel_network.slurm
 ```
 
-# Understanding the Slurm script
+## Understanding the Slurm script
 The guide for setting up a Slurm script is here: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery/getting-started
 
 The guide for setting up an MPI-Only Slurm script is here: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery/slurm-templates
@@ -62,7 +62,7 @@ Ex:
 The account name will have to be changed if it is not berger_92.
 Enter the command ```myaccount``` to see your available accounts.
 
-# Interactive mode
+## Interactive mode
 See: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery/getting-started (Testing your job section)
 "Interactive jobs are similar to batch jobs but **all actions are typed manually on the command line**, rather than in a script. The main advantage of an interactive job is that you get immediate feedback and the job will not end (and put your compute resources back into the pool) if your program errors out. This makes interactive jobs ideal test environments for people who aren't sure what to put in their job scripts."
 
