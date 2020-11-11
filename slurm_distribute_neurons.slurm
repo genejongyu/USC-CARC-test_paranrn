@@ -21,7 +21,6 @@ ulimit -s unlimited
 
 export OMP_NUM_THREADS=1
 
-export PATH=$PATH:/project/berger_92/geneyu/Big_Model/USC-CARC-test_paranrn/nrn-7.7/bin
 export PYTHONPATH=$PYTHONPATH:/project/berger_92/geneyu/Big_Model/USC-CARC-test_paranrn/nrn-7.7/lib/python
 
 mpirun -bind-to core -np 4 python test_distribute_neurons.py
