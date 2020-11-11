@@ -86,3 +86,15 @@ salloc --ntasks=4 --time=1:00:00 --account=<account_id>
 
 In the interactive session, you should have your slurm script opened in another window to copy and paste the commands for debugging. You do not need to copy and paste the ```#SBATCH``` lines. Only enter the lines beginning with the module load and onward.
 
+## Tutorial for specifying a parallel network
+The following guide can be used to understand the syntax for creating a network with neurons distributed across different processes:
+
+https://www.neuron.yale.edu/neuron/docs/ball-and-stick-model-part-4
+
+This guide also uses code from the previous part: https://www.neuron.yale.edu/neuron/docs/ball-and-stick-model-part-3
+
+## test_parallel_network.py
+This script creates models that are distributed across different processes and need to communicate with neurons on different processes. A network is constructed that requires communication between spike generators and neurons that exist on different processes. It requires the ParallelContext object from NEURON to be instantiated to handle the parallel network communication.
+
+## test_distirbute_neurons.py
+This script is an example for distributing neurons across different processes but only need to communicate with neurons on the same process. This may be useful for investigating the effects of different parameters on the same neuron model. It uses mpi4py to handle the parallel distribution of these neurons across different processes.
