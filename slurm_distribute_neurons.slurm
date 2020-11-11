@@ -21,6 +21,10 @@ ulimit -s unlimited
 
 export OMP_NUM_THREADS=1
 
-export PYTHONPATH=$PYTHONPATH:/project/berger_92/geneyu/Big_Model/USC-CARC-test_paranrn/nrn-7.7/lib/python
+
+# Change NEURON_PATH to point to your NEURON installation directory
+NEURON_PATH=/project/berger_92/geneyu/Big_Model/USC-CARC-test_paranrn/nrn-7.7
+
+export PYTHONPATH=$PYTHONPATH:$NEURON_PATH/lib/python
 
 mpirun -bind-to core -np 4 python test_distribute_neurons.py
