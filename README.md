@@ -77,9 +77,10 @@ Ex:
 
 ## Interactive mode
 See: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery/getting-started (Testing your job section)
+
 "Interactive jobs are similar to batch jobs but **all actions are typed manually on the command line**, rather than in a script. The main advantage of an interactive job is that you get immediate feedback and the job will not end (and put your compute resources back into the pool) if your program errors out. This makes interactive jobs ideal test environments for people who aren't sure what to put in their job scripts."
 
-An interactive session can be started usig the following command:
+An interactive session can be started using the following command:
 ```
 salloc --ntasks=4 --time=1:00:00 --account=<account_id>
 ```
