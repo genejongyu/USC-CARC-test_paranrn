@@ -4,7 +4,7 @@ This code is specific for testing your parallel PyNEURON installation on the CAR
 
 Using this code to run a parallel network on your own computer will be slightly different.
 
-Information on the commands to format and submit jobs in the Discover cluster were taken from this website: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery
+Information on the commands to format and submit jobs in the Discover cluster were taken from this website: https://carc.usc.edu/user-information/user-guides/high-performance-computing
 
 ## Installing nrn-7.8 (or latest stable version)
 To install the latest stable version of NEURON, use the following command:
@@ -32,7 +32,7 @@ $ chmod u+x install_nrn.sh
 ```
 
 ## Submitting a job
-The guide to submitting a job can be found here: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery/running-jobs
+The guide to submitting a job can be found here: https://carc.usc.edu/user-information/user-guides/high-performance-computing/running-jobs
 
 Before submitting a job, **you must first edit the following lines in each Slurm script to point to your installation of NEURON.**
 
@@ -63,9 +63,9 @@ $ sbatch slurm_parallel_network.slurm
 ```
 
 ## Understanding the Slurm script
-The guide for setting up a Slurm script is here: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery/getting-started
+The guide for setting up a Slurm script is here: https://carc.usc.edu/user-information/user-guides/high-performance-computing/getting-started-discovery
 
-The guide for setting up an MPI-Only Slurm script is here: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery/slurm-templates
+The guide for setting up an MPI-Only Slurm script is here: https://carc.usc.edu/user-information/user-guides/high-performance-computing/slurm-templates
 
 Note that the number of tasks in #SBATCH --ntasks and mpirun command lines need to match.
 
@@ -76,7 +76,7 @@ Ex:
 ```mpirun -bind-to core -np``` **4** ```python test_distribute_neurons.py```
 
 ## Interactive mode
-See: https://carc.usc.edu/user-information/user-guides/high-performance-computing/discovery/getting-started (Testing your job section)
+See: https://carc.usc.edu/user-information/user-guides/high-performance-computing/getting-started-discovery (Testing your job section)
 
 "Interactive jobs are similar to batch jobs but **all actions are typed manually on the command line**, rather than in a script. The main advantage of an interactive job is that you get immediate feedback and the job will not end (and put your compute resources back into the pool) if your program errors out. This makes interactive jobs ideal test environments for people who aren't sure what to put in their job scripts."
 
